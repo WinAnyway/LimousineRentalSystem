@@ -1,4 +1,18 @@
 package kuba.chmielowiec.domain;
 
-public class RegistrationNumber {
+import javax.persistence.Embeddable;
+import java.io.Serializable;
+
+@Embeddable
+public class RegistrationNumber implements Serializable{
+
+    private String number;
+
+    public RegistrationNumber(String number) {
+        this.number = number;
+    }
+
+    public String getNumber() {
+        return number;
+    }
 }
