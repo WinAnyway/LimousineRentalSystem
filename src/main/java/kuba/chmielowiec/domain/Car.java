@@ -1,9 +1,11 @@
 package kuba.chmielowiec.domain;
 
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 import java.time.Year;
 import java.time.format.DateTimeFormatter;
 
+@Entity
 public class Car {
 
     @EmbeddedId
@@ -11,6 +13,8 @@ public class Car {
     private String brand;
     private String model;
     private Year year;
+
+    Car(){}
 
     public Car(CreateCarCommand cmd) {
         this.registrationNumber = new RegistrationNumber(cmd.getRegistrationNumber());
