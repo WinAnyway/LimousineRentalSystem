@@ -2,6 +2,7 @@ package kuba.chmielowiec.infrastructure;
 
 import kuba.chmielowiec.application.*;
 import kuba.chmielowiec.domain.CarRepository;
+import kuba.chmielowiec.domain.ClientRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,8 +15,8 @@ public class Config {
     }
 
     @Bean
-    public ClientsManagement clientsManagement() {
-        return new StandardClientsManagement();
+    public ClientsManagement clientsManagement(ClientRepository clientRepository) {
+        return new StandardClientsManagement(clientRepository);
     }
 
     @Bean
@@ -31,5 +32,10 @@ public class Config {
     @Bean
     public CarRepository carRepository() {
         return new JPACarRepository();
+    }
+
+    @Bean
+    public ClientRepository clientRepository() {
+        return new JPAClientRepository();
     }
 }
