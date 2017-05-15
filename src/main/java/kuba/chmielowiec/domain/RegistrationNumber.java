@@ -8,6 +8,8 @@ public class RegistrationNumber implements Serializable{
 
     private String number;
 
+    RegistrationNumber(){}
+
     public RegistrationNumber(String number) {
         this.number = number;
     }
