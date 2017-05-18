@@ -1,8 +1,6 @@
 package kuba.chmielowiec.ui;
 
-import kuba.chmielowiec.application.CarDto;
-import kuba.chmielowiec.application.CarsCatalog;
-import kuba.chmielowiec.application.CarsManagement;
+import kuba.chmielowiec.application.*;
 import kuba.chmielowiec.domain.CreateCarCommand;
 import kuba.chmielowiec.domain.RegistrationNumber;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +13,12 @@ public class CarController {
 
     private CarsManagement carsManagement;
     private CarsCatalog carsCatalog;
+    private RentalProcess rentalProcess;
 
-    public CarController(CarsManagement carsManagement, CarsCatalog carsCatalog) {
+    public CarController(CarsManagement carsManagement, CarsCatalog carsCatalog, RentalProcess rentalProcess) {
         this.carsManagement = carsManagement;
         this.carsCatalog = carsCatalog;
+        this.rentalProcess = rentalProcess;
     }
 
     @PutMapping
@@ -34,5 +34,10 @@ public class CarController {
     @GetMapping("/{registrationNumber}")
     public CarDto showCar(@PathVariable RegistrationNumber registrationNumber) {
         return carsCatalog.get(registrationNumber);
+    }
+
+    @PutMapping("/{registrationNumber}/rent")
+    public String rentACar(@PathVariable RegistrationNumber registrationNumber, @RequestBody RentalInfo rentalInfo) {
+        return rentalProcess.rent(registrationNumber, rentalInfo);
     }
 }

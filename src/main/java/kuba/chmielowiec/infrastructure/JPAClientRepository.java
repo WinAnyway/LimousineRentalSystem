@@ -15,4 +15,9 @@ public class JPAClientRepository implements ClientRepository{
     public void put(Client client) {
         entityManager.persist(client);
     }
+
+    @Override
+    public Client get(Long clientId) {
+        return entityManager.find(Client.class, clientId);
+    }
 }

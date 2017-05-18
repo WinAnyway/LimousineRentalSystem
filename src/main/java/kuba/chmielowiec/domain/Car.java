@@ -13,6 +13,7 @@ public class Car {
     private String brand;
     private String model;
     private Year year;
+    private boolean available;
 
     Car(){}
 
@@ -21,6 +22,7 @@ public class Car {
         this.brand = cmd.getBrand();
         this.model = cmd.getModel();
         this.year = Year.parse(cmd.getYear(), DateTimeFormatter.ofPattern("yyyy"));
+        this.available = true;
     }
 
     public RegistrationNumber getRegistrationNumber() {
@@ -37,5 +39,13 @@ public class Car {
 
     public Year getYear() {
         return year;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void rent() {
+        this.available = false;
     }
 }
