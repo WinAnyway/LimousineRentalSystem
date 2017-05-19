@@ -1,4 +1,4 @@
-package kuba.chmielowiec.domain;
+package kuba.chmielowiec.domain.client;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;

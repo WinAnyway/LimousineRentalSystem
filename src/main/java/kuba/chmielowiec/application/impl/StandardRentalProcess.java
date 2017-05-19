@@ -1,12 +1,20 @@
-package kuba.chmielowiec.application;
+package kuba.chmielowiec.application.impl;
 
-import kuba.chmielowiec.domain.*;
+import kuba.chmielowiec.domain.rental.RentalInfo;
+import kuba.chmielowiec.application.RentalProcess;
+import kuba.chmielowiec.domain.car.Car;
+import kuba.chmielowiec.domain.car.CarRepository;
+import kuba.chmielowiec.domain.car.RegistrationNumber;
+import kuba.chmielowiec.domain.client.Client;
+import kuba.chmielowiec.domain.client.ClientRepository;
+import kuba.chmielowiec.domain.rental.Rental;
+import kuba.chmielowiec.domain.rental.RentalRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class StandardRentalProcess implements RentalProcess{
+public class StandardRentalProcess implements RentalProcess {
 
     private CarRepository carRepository;
     private RentalRepository rentalRepository;

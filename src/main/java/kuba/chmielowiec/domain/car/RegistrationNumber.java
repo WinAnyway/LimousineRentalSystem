@@ -1,4 +1,4 @@
-package kuba.chmielowiec.domain;
+package kuba.chmielowiec.domain.car;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;

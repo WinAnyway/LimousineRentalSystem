@@ -1,6 +1,6 @@
-package kuba.chmielowiec.application;
+package kuba.chmielowiec.application.dtos;
 
-import kuba.chmielowiec.domain.Address;
+import kuba.chmielowiec.domain.client.Address;
 
 public class ClientDto {
 

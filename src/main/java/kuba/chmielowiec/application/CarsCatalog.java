@@ -1,6 +1,7 @@
 package kuba.chmielowiec.application;
 
-import kuba.chmielowiec.domain.RegistrationNumber;
+import kuba.chmielowiec.application.dtos.CarDto;
+import kuba.chmielowiec.domain.car.RegistrationNumber;
 
 import java.util.List;
 

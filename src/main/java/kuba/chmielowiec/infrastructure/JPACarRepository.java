@@ -1,8 +1,8 @@
 package kuba.chmielowiec.infrastructure;
 
-import kuba.chmielowiec.domain.Car;
-import kuba.chmielowiec.domain.CarRepository;
-import kuba.chmielowiec.domain.RegistrationNumber;
+import kuba.chmielowiec.domain.car.Car;
+import kuba.chmielowiec.domain.car.CarRepository;
+import kuba.chmielowiec.domain.car.RegistrationNumber;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

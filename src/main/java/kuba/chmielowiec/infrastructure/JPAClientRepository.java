@@ -1,7 +1,7 @@
 package kuba.chmielowiec.infrastructure;
 
-import kuba.chmielowiec.domain.Client;
-import kuba.chmielowiec.domain.ClientRepository;
+import kuba.chmielowiec.domain.client.Client;
+import kuba.chmielowiec.domain.client.ClientRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

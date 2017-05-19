@@ -1,4 +1,4 @@
-package kuba.chmielowiec.domain;
+package kuba.chmielowiec.domain.client;
 
 public class CreateClientCommand {
 

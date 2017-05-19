@@ -1,4 +1,4 @@
-package kuba.chmielowiec.application;
+package kuba.chmielowiec.application.dtos;
 
 import java.time.Year;
 

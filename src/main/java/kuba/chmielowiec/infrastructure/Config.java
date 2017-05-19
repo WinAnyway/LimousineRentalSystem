@@ -1,9 +1,12 @@
 package kuba.chmielowiec.infrastructure;
 
 import kuba.chmielowiec.application.*;
-import kuba.chmielowiec.domain.CarRepository;
-import kuba.chmielowiec.domain.ClientRepository;
-import kuba.chmielowiec.domain.RentalRepository;
+import kuba.chmielowiec.application.impl.StandardCarsManagement;
+import kuba.chmielowiec.application.impl.StandardClientsManagement;
+import kuba.chmielowiec.application.impl.StandardRentalProcess;
+import kuba.chmielowiec.domain.car.CarRepository;
+import kuba.chmielowiec.domain.client.ClientRepository;
+import kuba.chmielowiec.domain.rental.RentalRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,4 +1,4 @@
-package kuba.chmielowiec.application;
+package kuba.chmielowiec.domain.rental;
 
 public class RentalInfo {
 

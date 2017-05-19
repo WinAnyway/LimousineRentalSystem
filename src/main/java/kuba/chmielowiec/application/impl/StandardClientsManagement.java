@@ -1,11 +1,12 @@
-package kuba.chmielowiec.application;
+package kuba.chmielowiec.application.impl;
 
-import kuba.chmielowiec.domain.Client;
-import kuba.chmielowiec.domain.ClientRepository;
-import kuba.chmielowiec.domain.CreateClientCommand;
+import kuba.chmielowiec.application.ClientsManagement;
+import kuba.chmielowiec.domain.client.Client;
+import kuba.chmielowiec.domain.client.ClientRepository;
+import kuba.chmielowiec.domain.client.CreateClientCommand;
 import org.springframework.transaction.annotation.Transactional;
 
-public class StandardClientsManagement implements ClientsManagement{
+public class StandardClientsManagement implements ClientsManagement {
 
     private ClientRepository clientRepository;
 

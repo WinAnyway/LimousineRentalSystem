@@ -1,9 +1,13 @@
 package kuba.chmielowiec.infrastructure;
 
 import kuba.chmielowiec.application.*;
-import kuba.chmielowiec.domain.Car;
-import kuba.chmielowiec.domain.Client;
-import kuba.chmielowiec.domain.Rental;
+import kuba.chmielowiec.application.dtos.CarDto;
+import kuba.chmielowiec.application.dtos.ClientDto;
+import kuba.chmielowiec.application.dtos.RentalDto;
+import kuba.chmielowiec.application.dtos.RentalHistory;
+import kuba.chmielowiec.domain.car.Car;
+import kuba.chmielowiec.domain.client.Client;
+import kuba.chmielowiec.domain.rental.Rental;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

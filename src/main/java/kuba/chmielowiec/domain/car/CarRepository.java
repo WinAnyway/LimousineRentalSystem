@@ -1,4 +1,4 @@
-package kuba.chmielowiec.domain;
+package kuba.chmielowiec.domain.car;
 
 public interface CarRepository {
     void put(Car car);

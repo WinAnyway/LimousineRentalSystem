@@ -1,7 +1,7 @@
 package kuba.chmielowiec.infrastructure;
 
-import kuba.chmielowiec.domain.Rental;
-import kuba.chmielowiec.domain.RentalRepository;
+import kuba.chmielowiec.domain.rental.Rental;
+import kuba.chmielowiec.domain.rental.RentalRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

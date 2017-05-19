@@ -1,8 +1,10 @@
 package kuba.chmielowiec.ui;
 
 import kuba.chmielowiec.application.*;
-import kuba.chmielowiec.domain.CreateCarCommand;
-import kuba.chmielowiec.domain.RegistrationNumber;
+import kuba.chmielowiec.application.dtos.CarDto;
+import kuba.chmielowiec.domain.car.CreateCarCommand;
+import kuba.chmielowiec.domain.car.RegistrationNumber;
+import kuba.chmielowiec.domain.rental.RentalInfo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

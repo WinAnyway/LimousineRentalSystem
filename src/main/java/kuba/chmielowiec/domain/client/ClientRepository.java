@@ -1,4 +1,4 @@
-package kuba.chmielowiec.domain;
+package kuba.chmielowiec.domain.client;
 
 public interface ClientRepository {
     void put(Client client);

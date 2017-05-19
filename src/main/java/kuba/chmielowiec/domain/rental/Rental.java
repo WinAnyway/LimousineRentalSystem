@@ -1,4 +1,7 @@
-package kuba.chmielowiec.domain;
+package kuba.chmielowiec.domain.rental;
+
+import kuba.chmielowiec.domain.car.Car;
+import kuba.chmielowiec.domain.client.Client;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -8,21 +11,21 @@ public class Rental {
 
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Client_Id")
-    Client client;
+    private Client client;
 
     @ManyToOne
     @JoinColumn(name = "Car_Number")
-    Car car;
+    private Car car;
 
-    LocalDate startDate;
-    LocalDate endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
 
     @Enumerated(EnumType.STRING)
-    RentalStatus status;
+    private RentalStatus status;
 
     Rental(){}
 

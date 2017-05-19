@@ -1,15 +1,15 @@
-package kuba.chmielowiec.application;
+package kuba.chmielowiec.application.dtos;
 
-import kuba.chmielowiec.domain.RentalStatus;
+import kuba.chmielowiec.domain.rental.RentalStatus;
 
 import java.time.LocalDate;
 
 public class RentalDto {
 
-    CarDto car;
-    LocalDate startDate;
-    LocalDate endDate;
-    RentalStatus status;
+    private CarDto car;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private RentalStatus status;
 
     public RentalDto(CarDto car, LocalDate startDate, LocalDate endDate, RentalStatus status) {
         this.car = car;
