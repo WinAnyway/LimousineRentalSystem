@@ -7,7 +7,7 @@ import kuba.chmielowiec.domain.car.RegistrationNumber;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-public class JPACarRepository implements CarRepository{
+public class JPACarRepository implements CarRepository {
 
     @PersistenceContext
     EntityManager entityManager;
@@ -19,7 +19,10 @@ public class JPACarRepository implements CarRepository{
 
     @Override
     public Car get(RegistrationNumber registrationNumber) {
-        return entityManager.find(Car.class, registrationNumber);
+        Car car = entityManager.find(Car.class, registrationNumber);
+        if (car == null)
+            throw new NoResourceException(String.format("Car with registration number %s does not exist", registrationNumber.getNumber()));
+        return car;
     }
 
 }

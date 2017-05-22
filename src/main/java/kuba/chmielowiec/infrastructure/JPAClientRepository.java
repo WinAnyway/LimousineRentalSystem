@@ -6,7 +6,7 @@ import kuba.chmielowiec.domain.client.ClientRepository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-public class JPAClientRepository implements ClientRepository{
+public class JPAClientRepository implements ClientRepository {
 
     @PersistenceContext
     EntityManager entityManager;
@@ -18,6 +18,9 @@ public class JPAClientRepository implements ClientRepository{
 
     @Override
     public Client get(Long clientId) {
-        return entityManager.find(Client.class, clientId);
+        Client client = entityManager.find(Client.class, clientId);
+        if (client == null)
+            throw new NoResourceException(String.format("Client with id %d does not exist", clientId));
+        return client;
     }
 }

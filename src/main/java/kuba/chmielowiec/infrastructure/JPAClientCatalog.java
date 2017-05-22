@@ -41,6 +41,8 @@ public class JPAClientCatalog implements ClientCatalog{
     @Override
     public ClientDto get(Long clientId) {
         Client client = entityManager.find(Client.class, clientId);
+        if(client == null)
+            throw new NoResourceException(String.format("Client with id %d does not exist", clientId));
         return new ClientDto(client.getId(), client.getFirstName(), client.getLastName(), client.getPesel(), client.getAddress());
     }
 

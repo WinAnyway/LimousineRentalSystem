@@ -25,6 +25,8 @@ public class JPACarsCatalog implements CarsCatalog{
     @Override
     public CarDto get(RegistrationNumber registrationNumber) {
         Car car = entityManager.find(Car.class, registrationNumber);
+        if(car == null)
+            throw new NoResourceException(String.format("Car with registration number %s does not exist", registrationNumber.getNumber()));
         return new CarDto(car.getRegistrationNumber().getNumber(), car.getBrand(), car.getModel(), car.getYear());
     }
 
