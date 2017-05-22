@@ -2,7 +2,7 @@ package kuba.chmielowiec.domain.commands;
 
 import kuba.chmielowiec.domain.client.Address;
 
-public class CreateClientCommand implements Validatable{
+public class CreateClientCommand implements Validatable {
 
     private String firstName;
     private String lastName;
@@ -50,28 +50,32 @@ public class CreateClientCommand implements Validatable{
     }
 
     private void validatePesel(ValidationErrors errors) {
-        if(isEmpty(pesel))
+        if (isEmpty(pesel))
             errors.add("pesel", "This field needs to be filled");
     }
 
     private void validateLastName(ValidationErrors errors) {
-        if(isEmpty(lastName))
+        if (isEmpty(lastName))
             errors.add("lastName", "This field needs to be filled");
     }
 
     private void validateFirstName(ValidationErrors errors) {
-        if(isEmpty(firstName))
+        if (isEmpty(firstName))
             errors.add("firstName", "This field needs to be filled");
     }
 
     private void validateAddress(ValidationErrors errors) {
-        if(isEmpty(address.getCountry()))
-            errors.add("country", "This field needs to be filled");
-        if(isEmpty(address.getCity()))
-            errors.add("city", "This field needs to be filled");
-        if(isEmpty(address.getStreet()))
-            errors.add("street", "This field needs to be filled");
-        if(isEmpty(address.getPostalCode()))
-            errors.add("postalCode", "This field needs to be filled");
+        if (address == null)
+            errors.add("address", "This field needs to be filled");
+        else {
+            if (isEmpty(address.getCountry()))
+                errors.add("country", "This field needs to be filled");
+            if (isEmpty(address.getCity()))
+                errors.add("city", "This field needs to be filled");
+            if (isEmpty(address.getStreet()))
+                errors.add("street", "This field needs to be filled");
+            if (isEmpty(address.getPostalCode()))
+                errors.add("postalCode", "This field needs to be filled");
+        }
     }
 }
