@@ -15,6 +15,10 @@ import java.time.format.DateTimeFormatter;
 
 public class StandardRentalProcess implements RentalProcess {
 
+    private final String CORRECT_DATE_FORMAT = "yyyy/MM/dd";
+    private final String CAR_NOT_AVAILABLE = "We are sorry, this car is currently not available for rental";
+    private final String CAR_RENTED = "You have successfully rented a %s %s";
+
     private CarRepository carRepository;
     private RentalRepository rentalRepository;
     private ClientRepository clientRepository;
@@ -30,17 +34,17 @@ public class StandardRentalProcess implements RentalProcess {
     public String rent(CreateRentalCommand cmd) {
         Car car = carRepository.get(cmd.getRegistrationNumber());
         if(car.isAvailable()) {
-            rent(cmd, car);
-            return String.format("You have successfully rented a %s %s", car.getBrand(), car.getModel());
+            createRental(cmd, car);
+            return String.format(CAR_RENTED, car.getBrand(), car.getModel());
         }
-        return "We are sorry, this car is currently not available for rent";
+        return CAR_NOT_AVAILABLE;
     }
 
-    private void rent(CreateRentalCommand cmd, Car car) {
+    private void createRental(CreateRentalCommand cmd, Car car) {
         Client client = clientRepository.get(cmd.getClientId());
         car.rent();
-        LocalDate from = LocalDate.parse(cmd.getFrom(), DateTimeFormatter.ofPattern("yyyy/MM/dd"));
-        LocalDate to = LocalDate.parse(cmd.getTo(), DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+        LocalDate from = LocalDate.parse(cmd.getFrom(), DateTimeFormatter.ofPattern(CORRECT_DATE_FORMAT));
+        LocalDate to = LocalDate.parse(cmd.getTo(), DateTimeFormatter.ofPattern(CORRECT_DATE_FORMAT));
         rentalRepository.put(new Rental(client, car, from, to));
     }
 
