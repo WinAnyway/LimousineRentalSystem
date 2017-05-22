@@ -4,7 +4,7 @@ import kuba.chmielowiec.application.ClientCatalog;
 import kuba.chmielowiec.application.dtos.ClientDto;
 import kuba.chmielowiec.application.ClientsManagement;
 import kuba.chmielowiec.application.dtos.RentalHistory;
-import kuba.chmielowiec.domain.client.CreateClientCommand;
+import kuba.chmielowiec.domain.commands.CreateClientCommand;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

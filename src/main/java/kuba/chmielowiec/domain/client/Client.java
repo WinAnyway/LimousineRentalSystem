@@ -1,5 +1,7 @@
 package kuba.chmielowiec.domain.client;
 
+import kuba.chmielowiec.domain.commands.CreateClientCommand;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

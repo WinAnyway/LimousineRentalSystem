@@ -1,6 +1,6 @@
 package kuba.chmielowiec.application;
 
-import kuba.chmielowiec.domain.car.CreateCarCommand;
+import kuba.chmielowiec.domain.commands.CreateCarCommand;
 
 public interface CarsManagement {
 

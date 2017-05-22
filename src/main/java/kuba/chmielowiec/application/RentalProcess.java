@@ -1,10 +1,9 @@
 package kuba.chmielowiec.application;
 
-import kuba.chmielowiec.domain.car.RegistrationNumber;
-import kuba.chmielowiec.domain.rental.RentalInfo;
+import kuba.chmielowiec.domain.commands.CreateRentalCommand;
 
 public interface RentalProcess {
 
-    String rent(RegistrationNumber registrationNumber, RentalInfo rentalInfo);
+    String rent(CreateRentalCommand createRentalCommand);
 
 }

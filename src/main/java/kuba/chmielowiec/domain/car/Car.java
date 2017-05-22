@@ -1,5 +1,7 @@
 package kuba.chmielowiec.domain.car;
 
+import kuba.chmielowiec.domain.commands.CreateCarCommand;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import java.time.Year;

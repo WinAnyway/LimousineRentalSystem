@@ -2,9 +2,9 @@ package kuba.chmielowiec.ui;
 
 import kuba.chmielowiec.application.*;
 import kuba.chmielowiec.application.dtos.CarDto;
-import kuba.chmielowiec.domain.car.CreateCarCommand;
+import kuba.chmielowiec.domain.commands.CreateCarCommand;
 import kuba.chmielowiec.domain.car.RegistrationNumber;
-import kuba.chmielowiec.domain.rental.RentalInfo;
+import kuba.chmielowiec.domain.commands.CreateRentalCommand;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,7 +39,9 @@ public class CarController {
     }
 
     @PutMapping("/{registrationNumber}/rent")
-    public String rentACar(@PathVariable RegistrationNumber registrationNumber, @RequestBody RentalInfo rentalInfo) {
-        return rentalProcess.rent(registrationNumber, rentalInfo);
+    public String rentACar(@PathVariable RegistrationNumber registrationNumber, @RequestBody CreateRentalCommand createRentalCommand) {
+         createRentalCommand.setRegistrationNumber(registrationNumber);
+        return rentalProcess.rent(createRentalCommand);
     }
+
 }
