@@ -4,7 +4,7 @@ import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-public class CreateCarCommand implements Validatable{
+public class CreateCarCommand implements Validatable {
     private String registrationNumber;
     private String brand;
     private String model;
@@ -51,27 +51,29 @@ public class CreateCarCommand implements Validatable{
     }
 
     private void validateYear(ValidationErrors errors) {
-        if(isEmpty(year))
+        if (isEmpty(year))
             errors.add("year", "This field needs to be filled");
-        try {
-            Year.parse(year, DateTimeFormatter.ofPattern("yyyy"));
-        } catch (DateTimeParseException e) {
-            errors.add("year", "Invalid year format. Correct format: yyyy");
+        else {
+            try {
+                Year.parse(year, DateTimeFormatter.ofPattern("yyyy"));
+            } catch (DateTimeParseException e) {
+                errors.add("year", "Invalid year format. Correct format: yyyy");
+            }
         }
     }
 
     private void validateModel(ValidationErrors errors) {
-        if(isEmpty(model))
+        if (isEmpty(model))
             errors.add("model", "This field needs to be filled");
     }
 
     private void validateBrand(ValidationErrors errors) {
-        if(isEmpty(brand))
+        if (isEmpty(brand))
             errors.add("brand", "This field needs to be filled");
     }
 
     private void validateRegistrationNumber(ValidationErrors errors) {
-        if(isEmpty(registrationNumber))
+        if (isEmpty(registrationNumber))
             errors.add("registrationNumber", "This field needs to be filled");
     }
 }
